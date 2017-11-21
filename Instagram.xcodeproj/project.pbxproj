@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F581C0C32B3C2551A9883F5 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF7674B5D8A03818ED8140C /* Pods_Instagram.framework */; };
+		B628C1D61FC291B100C80EA5 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628C1D51FC291B100C80EA5 /* CommentViewController.swift */; };
 		B660BAD51FBD666C00A6AD46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B660BAD41FBD666C00A6AD46 /* GoogleService-Info.plist */; };
 		B660BAD81FBD712500A6AD46 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B660BAD61FBD712500A6AD46 /* AdobeCreativeSDKCore.framework */; };
 		B660BADB1FBD715C00A6AD46 /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B660BAD61FBD712500A6AD46 /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		0B1C34621120DC231A997869 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
+		B628C1D51FC291B100C80EA5 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		B660BAD41FBD666C00A6AD46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B660BAD61FBD712500A6AD46 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
 		B660BAD71FBD712500A6AD46 /* AdobeCreativeSDKImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKImage.framework; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				B660BAD61FBD712500A6AD46 /* AdobeCreativeSDKCore.framework */,
 				B660BAD71FBD712500A6AD46 /* AdobeCreativeSDKImage.framework */,
 				B672357D1FBD607B0036B21D /* Main.storyboard */,
+				B628C1D51FC291B100C80EA5 /* CommentViewController.swift */,
 				B660BAF91FBD79F300A6AD46 /* PostData.swift */,
 				B660BAFF1FBDA4C500A6AD46 /* PostTableViewCell.swift */,
 				B660BB001FBDA4C500A6AD46 /* PostTableViewCell.xib */,
@@ -339,6 +342,7 @@
 				B660BAF81FBD790400A6AD46 /* Const.swift in Sources */,
 				B6C435761FBD624200ADC61C /* HomeViewController.swift in Sources */,
 				B6C4357A1FBD627200ADC61C /* SettingViewController.swift in Sources */,
+				B628C1D61FC291B100C80EA5 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

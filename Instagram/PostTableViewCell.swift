@@ -15,7 +15,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +42,18 @@ class PostTableViewCell: UITableViewCell {
         
         let dateString:String = formatter.string(from: postData.date! as Date)
         self.dateLabel.text = dateString
+        
+        // 投稿されたコメントを表示する
+        let comments = postData.comments
+        
+        var addComment: String = ""
+            for comment in comments {
+                let name: String! = comment["name"]!
+                let commentText: String! = comment["comment"]!
+                addComment += "\(name!) : \(commentText!)\n"
+        }
+
+        self.commentLabel.text = addComment
         
         if postData.isLiked {
             let buttonImage = UIImage(named: "like_exist")

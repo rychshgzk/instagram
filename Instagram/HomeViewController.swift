@@ -32,6 +32,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
         
+        // ★コメントボタンのアクションを設定
+        // セル内のボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action:#selector(handleCommentButton(sender:event:)), for:  UIControlEvents.touchUpInside)
+        
         return cell
     }
     
@@ -43,6 +47,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // セルをタップされたら何もせずに選択状態を解除する
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+    
+    // ★コメントボタンがタップされた時に呼ばれるメソッド
+    func handleCommentButton(sender: UIButton, event:UIEvent) {
+        print("DEBUG_PRINT: コメントボタンがタップされました。")
+
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+
+        // タップした時にCommentViewControllerを表示
+        let storyboard: UIStoryboard = self.storyboard!
+        let commentViewController = storyboard.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        present(commentViewController, animated: true, completion: nil)
+        
+        // 遷移先のCommentViewControllerに postData を渡す（コメントをFirebaseに保存するため）
+        commentViewController.postContents = postData
+        
     }
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
